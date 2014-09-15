@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Timer Demo</title>
+    <script src="src/TimerFactory.js"></script>
+</head>
+<body>
+    <h2>Timer Demo</h2>
+    <div>
+        Use the Timer Factory to create your own instance of timer for general purpose in your code, using your own callback function.
+        <br>
+        <strong>.create(tickIntervalMinutes, events, timoutMinutes, callback)</strong> - 4 required parameters must be provided
+        <br>&nbsp;&nbsp;
+        where tickIntervalMinutes is numeric; events is String of events, delimited by a space (i.e. " ") to interrupt; timeoutMinutes is numeric; callback is a function.
+        timer such that elapsed time is reset back to 0.
+        <br><br>For example, this code snippet,
+        <br>&nbsp;&nbsp;
+        <strong>
+        <em>
+            var timer = TimerFactory.create(1/60, \"click keydown focus scroll\", 1/60*15, function(){ console.log('OK'); alert('OK'); });
+        </em>
+        </strong><br>would instantiate a timer with the following 'configurations':
+        <ul>
+            <li>tick every second</li>
+            <li>timer is interrupted if any of these events is encountered: mouse click, keyboard pressed, zoom in/out or page scrolling</li>
+            <li>timeout after 15 seconds</li>
+            <li>after timeout, the callback function would log "OK" in console and alert a pop-up window with "OK".</li>
+        </ul>
+    </div>
+    <strong>Example of When invalid parameter(s) are provided:</strong>
+    <div id="incorrect_example_div"></div>
+    <script src="startTimer.js"></script>
+</body>
+</html>
